@@ -3,89 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bill Calculator</title>
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-
-      .container {
-        background-color: #ffffff;
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-        width: 350px;
-        text-align: center;
-      }
-
-      h1 {
-        color: #2b5876;
-        font-size: 22px;
-        margin-bottom: 15px;
-      }
-
-      input {
-        width: 90%;
-        padding: 10px;
-        margin: 8px 0;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        font-size: 15px;
-        text-align: center;
-        transition: 0.3s;
-      }
-
-      input:focus {
-        border-color: #2b5876;
-        outline: none;
-        box-shadow: 0 0 5px #2b5876;
-      }
-
-      button {
-        width: 100%;
-        padding: 10px;
-        background-color: #2b5876;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        font-size: 16px;
-        margin-top: 10px;
-        cursor: pointer;
-        transition: background 0.3s;
-      }
-
-      button:hover {
-        background-color: #4e4376;
-      }
-
-      p {
-        background: #f5f5f5;
-        margin-top: 10px;
-        padding: 10px;
-        border-radius: 8px;
-        font-weight: 500;
-      }
-
-      .highlight {
-        background: #e3f2fd;
-        color: #0d47a1;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
   </head>
 
   <body>
     <div class="container">
       <h1>💡 Electricity Bill Calculator</h1>
-
+      <label for="billElement">Total Bill Amount</label>
       <input id="billElement" placeholder="Total Bill Amount (₹)" />
+      <label for="totalUnits">Total Units</label>
       <input id="totalUnits" placeholder="Total Units" />
+      <label for="LatestMonthReading">Latest Month Reading</label>
       <input id="LatestMonthReading" placeholder="Latest Month Reading" />
+      <label for="previousMonthReading">Previous Month Reading</label>
       <input id="previousMonthReading" placeholder="Previous Month Reading" />
 
       <button onclick="calculateUnits()">Calculate</button>
@@ -96,8 +27,11 @@
       <p id="differenceAmount"></p>
       <p id="EachFloor"></p>
     </div>
+   
 
-    <script>
+
+
+    <!-- <script>
       let billElement = document.getElementById("billElement");
       let totalUnits = document.getElementById("totalUnits");
 
@@ -125,7 +59,9 @@
         let unitsConsumed = billElementValue / totalUnitsValue;
         let decimalPart = unitsConsumed - Math.floor(unitsConsumed);
         unitsConsumed =
-          decimalPart > 0.5 ? Math.ceil(unitsConsumed) : Math.floor(unitsConsumed);
+          decimalPart > 0.5
+            ? Math.ceil(unitsConsumed)
+            : Math.floor(unitsConsumed);
 
         // Reading difference
         let totalReading = LatestMonthReading - previousMonthReading;
@@ -155,6 +91,6 @@
         document.getElementById("EachFloor").textContent =
           "Each Floor Amount: ₹" + EachFloorAmount;
       }
-    </script>
+    </script> -->
   </body>
 </html>
